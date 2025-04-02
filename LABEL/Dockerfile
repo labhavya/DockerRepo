@@ -3,4 +3,4 @@ RUN dnf install nginx -y
 LABEL project="expense" \
       environment="dev" \
       author="Siva"
-CMD ["nginx", "-g", "daemon;"]
+CMD ["nginx", "-g", "daemon off;"]
