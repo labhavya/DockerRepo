@@ -1,7 +1,7 @@
 FROM node:20.19.0-alpine3.21
 RUN addgroup -S expense && adduser -S expense -G appgroup
 RUN mkdir /app
-RUN chown expense:expense /app
+RUN chown -R expense:expense /app
 WORKDIR /app
 COPY *.js .
 COPY *.json .
