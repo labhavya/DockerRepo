@@ -1,5 +1,5 @@
 FROM node:20.19.0-alpine3.21
-RUN RUN addgroup -S expense && adduser -S expense -G appgroup
+RUN addgroup -S expense && adduser -S expense -G appgroup
 RUN mkdir /app
 RUN chown expense:expense /app
 WORKDIR /app
