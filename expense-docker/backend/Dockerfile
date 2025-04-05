@@ -1,8 +1,12 @@
-FROM node:20
+FROM node:20.19.0-alpine3.21
+RUN RUN addgroup -S expense && adduser -S expense -G appgroup
+RUN mkdir /app
+RUN chown expense:expense /app
 WORKDIR /app
 COPY *.js .
 COPY *.json .
 RUN npm install
 ENV DB_HOST="mysql"
-#ENV DB_HOST="localhost"  #testing with host network  
+#ENV DB_HOST="localhost"  #testing with host network
+USER expense  
 CMD ["node","index.js" ]      
