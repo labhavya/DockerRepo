@@ -1,14 +1,10 @@
 FROM node:20.19.0-alpine3.21
-RUN addgroup -S expense && adduser -S expense -G expense && \
-    mkdir /app && \
-    chown -R expense:expense /app \
-    apk add --update \
-    curl \
-    && rm -rf /var/cache/apk/* \
-    apk add busybox-extras
+RUN addgroup -S expense && adduser -S expense -G expense
+RUN mkdir /app
+RUN chown -R expense:expense /app
 WORKDIR /app
-COPY *.js ./
-COPY *.json ./
+COPY *.js .
+COPY *.json .
 RUN npm install
 ENV DB_HOST="mysql"
 #ENV DB_HOST="localhost"  #testing with host network
