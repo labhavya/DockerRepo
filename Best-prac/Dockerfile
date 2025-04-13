@@ -3,8 +3,8 @@ RUN addgroup -S expense && adduser -S expense -G expense
 RUN mkdir /app
 RUN chown -R expense:expense /app
 WORKDIR /app
-COPY *.js .
-COPY *.json .
+COPY *.js ./
+COPY *.json ./
 RUN npm install
 ENV DB_HOST="mysql"
 #ENV DB_HOST="localhost"  #testing with host network
