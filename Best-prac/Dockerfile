@@ -4,7 +4,7 @@ RUN addgroup -S expense && adduser -S expense -G expense && \
     chown -R expense:expense /app \
     apk add --update \
     curl \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
     apk add busybox-extras
 WORKDIR /app
 COPY *.js ./
