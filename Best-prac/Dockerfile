@@ -3,10 +3,9 @@ RUN addgroup -S expense && adduser -S expense -G expense && \
     mkdir /app && \
     chown -R expense:expense /app
 WORKDIR /app
+ENV DB_HOST="mysql"
+USER expense  
 COPY *.js ./
 COPY *.json ./
 RUN npm install
-ENV DB_HOST="mysql"
-#ENV DB_HOST="localhost"  #testing with host network
-USER expense  
 CMD ["node","index.js" ]      
