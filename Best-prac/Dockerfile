@@ -12,6 +12,6 @@ RUN addgroup -S expense && adduser -S expense -G expense && \
     chown -R expense:expense /app
 ENV DB_HOST="mysql"
 WORKDIR /app
-COPY --from:BUILDER /app /app
+COPY --from:builder /app /app
 USER expense
 CMD ["node","index.js" ] 
