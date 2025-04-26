@@ -1,7 +1,7 @@
 FROM nginx:alpine3.21-perl
 RUN rm -rf /usr/share/nginx/html/*
 RUN rm -rf /etc/nginx/nginx.conf
-RUN rm -rf /etc/nginx/config.d/default.confg
+RUN rm -rf /etc/nginx/conf.d/default.confg
 COPY scripts /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN mkdir -p /var/cache/nginx/client_temp && \
