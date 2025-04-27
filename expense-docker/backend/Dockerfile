@@ -1,4 +1,5 @@
 FROM node:20.19.0-alpine3.21
+RUN apk add --no-cache bash
 RUN addgroup -S expense && adduser -S expense -G expense
 RUN mkdir /app
 RUN chown -R expense:expense /app
